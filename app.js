@@ -18,13 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Validar reCAPTCHA
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                alert('Por favor, completa el reCAPTCHA.');
-                return;
-            }
-
             btn.disabled = true;
             btn.textContent = 'Enviando...';
 
@@ -53,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => {
                     alert('¡Mensaje enviado correctamente y datos guardados!');
                     form.reset();
-                    grecaptcha.reset();
                 })
                 .catch(error => {
                     console.error('Error:', error);

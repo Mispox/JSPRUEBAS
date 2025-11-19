@@ -46,13 +46,6 @@ if (btnRegister) {
         const password2 = document.getElementById("password2").value;
         const telefono = document.getElementById("phone").value
 
-        const recaptchaResponse = grecaptcha.getResponse();
-
-        if (recaptchaResponse.length === 0) {
-            alert("Por favor, verifica que no eres un robot.");
-            return;
-        }
-
         if (password !== password2) {
             alert("Las contraseñas no coinciden");
             return;
@@ -100,16 +93,14 @@ if (btnLogin) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        const recaptchaResponse = grecaptcha.getResponse();
-
-        if (recaptchaResponse.length === 0) {
-            alert("Por favor, verifica que no eres un robot.");
-            return;
-        }
-
         signInWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                window.location.href = "../principal.html";
+            .then((userCredential) => {
+                const user = userCredential.user;
+                if (user.email === 'admin@gmail.com') {
+                    window.location.href = "../productos.html";
+                } else {
+                    window.location.href = "../principal.html";
+                }
             })
             .catch((error) => {
                 alert("Error: " + error.message);
