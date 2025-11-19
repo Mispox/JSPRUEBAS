@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <header>
+            <nav class="main-nav">
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="auth-links">
+                <li><a href="#" id="logout-link" class="nav-link-text">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+     </header>
+
+
+     
+<main>
+    <h1>Productos</h1>
+
+    <!-- Formulario horizontal para agregar producto -->
+    <form id="addProductForm" class="form-horizontal">
+        <input type="text" id="nombreProducto" placeholder="Nombre" required>
+        <input type="text" id="descripcionProducto" placeholder="Descripción" required>
+        <input type="number" id="precioProducto" placeholder="Precio" required>
+        <input type="text" id="imagenProducto" placeholder="URL Imagen" required>
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <!-- Tabla de productos -->
+    <table id="productosTable">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="productosList">
+            <!-- Productos se agregan dinámicamente aquí -->
+        </tbody>
+    </table>
+
+</main>
+
+ 
+
+        <script type="module" src="main.js"></script>
+    </body>
+</html>

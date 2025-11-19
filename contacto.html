@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+
+    <!-- Librerías externas del usuario -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Inicialización de EmailJS (Mantenido según tu estructura, aunque la lógica usa GAS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+ <header>
+        <nav class="main-nav">
+        <ul>
+            <li><a href="principal.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <ul class="auth-links">
+            <li><a href="index.html" id="login-link">Cerrar Sesion</a></li>
+            <li class="nav-right"><a href="#" id="logout-link" style="display: none;">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+ </header>
+
+    <div class="container">
+        <section class="contact-form">
+            <h2>Envíanos un mensaje</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+
+                <div class="mb-3">
+
+                    <div class="g-recaptcha" data-sitekey="6LfcwwosAAAAAOGRG5paJnf5WqIU-HYIKqCD_X4Z"></div>
+                </div>
+
+                <button type="submit" id="button">Enviar Mensaje</button>
+            </form>
+        </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
